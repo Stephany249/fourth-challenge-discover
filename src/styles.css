@@ -1,0 +1,235 @@
+/* GLOBAL */
+:root {
+  --body-bg-color: #dce4e3;
+  --green: hsl(167, 78%, 43%);
+  --light-green: hsl(166, 48%, 70%);
+  --light-grey: hsl(172, 13%, 88%);
+  --text-color: hsl(168, 78%, 15%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100%;
+  font-family: 'Poppins';
+  background-color: var(--body-bg-color);
+}
+
+/* SIDEBAR */
+
+.dashboard-menu .sidebar-nav {
+  position: fixed;
+  width: 250px;
+  height: 100vh;
+  background-color: var(--green);
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-menu .sidebar-nav.close {
+  width: 78px;
+}
+
+/* SIDEBAR TOP*/
+
+.dashboard-menu .sidebar-nav .sidebar-top {
+  margin-top: 24px;
+  margin-left: 29px;
+  display: flex;
+  gap: 7.43rem;
+  align-items: center;
+}
+
+.dashboard-menu .sidebar-nav .sidebar-top.close {
+  margin-top: 26px;
+  margin-left: 27px;
+  gap: 0;
+}
+
+/* SIDEBAR MAIN */
+
+.dashboard-menu .sidebar-nav .sidebar-main ul li a {
+  position: relative;
+  display: flex;
+  gap: 13px;
+  flex-direction: row;
+  text-decoration: none;
+  color: var(--dark-green);
+  overflow-x: hidden;
+}
+
+.dashboard-menu .sidebar-nav .sidebar-main ul {
+  list-style: none;
+}
+
+.dashboard-menu .sidebar-nav .sidebar-main ul li {
+  margin-top: 1.62rem;
+  margin-left: 27px;
+  margin-right: 27px;
+}
+
+.dashboard-menu .sidebar-nav .sidebar-main li:hover {
+  padding: 12px;
+  border-radius: 10px;
+  background-color: var(--light-green);
+  cursor: pointer;
+}
+
+.dashboard-menu .sidebar-nav .sidebar-main.close li:hover {
+  padding: 0;
+}
+
+.dashboard-menu .sidebar-nav .sidebar-main ul li:first-child {
+  padding: 0;
+}
+
+.dashboard-menu .sidebar-nav .sidebar-main.close ul li:first-child {
+  margin-left: 14px;
+  margin-right: 14px;
+}
+
+.dashboard-menu .sidebar-nav .sidebar-main .input {
+  margin-top: 1.68rem;
+}
+
+.dashboard-menu .sidebar-nav .sidebar-main .input.close {
+  width: 3.12rem;
+}
+
+.dashboard-menu .sidebar-nav .sidebar-main .input label {
+  position: relative;
+}
+
+.dashboard-menu .sidebar-nav .sidebar-main .input label:before {
+  content: '';
+  position: absolute;
+  width: 24px;
+  top: 0;
+  right: 13px;
+  bottom: 0;
+  left: 13px;
+  background: url(../images/search.svg) no-repeat center;
+}
+
+.dashboard-menu .sidebar-nav .sidebar-main .input.close label:before {
+  left: 12px;
+}
+
+.dashboard-menu .sidebar-nav .sidebar-main .search {
+  max-width: 100%;
+  height: 50.92px;
+  padding: 10px 40px;
+
+  font-size: 15px;
+  line-height: 22px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--light-green);
+  color: var(--text-color);
+}
+
+.dashboard-menu .sidebar-nav .sidebar-main .search:focus {
+  border: 1px solid var(--text-color);
+  outline: none;
+}
+
+.dashboard-menu .sidebar-nav .sidebar-main .search.close {
+  padding: 25px;
+  background-color: var(--light-grey);
+}
+
+/* SIDEBAR BOTTOM*/
+.dashboard-menu .sidebar-nav .sidebar-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 15.68rem;
+  height: 3.75rem;
+  background-color: var(--light-green);
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-menu .sidebar-nav .sidebar-bottom.close {
+  width: 4.87rem;
+}
+
+.dashboard-menu .sidebar-nav .sidebar-bottom .profile {
+  width: 45px;
+  height: 45px;
+  margin: 8px 0 7px 14px;
+}
+
+.dashboard-menu .sidebar-nav .sidebar-bottom .profile img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+.dashboard-menu .sidebar-nav .sidebar-bottom .profile-details {
+  margin: 12px 0 0 9px;
+  color: var(--text-color);
+  line-height: 18px;
+}
+
+.dashboard-menu .sidebar-nav .sidebar-bottom .profile-details h5 {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.dashboard-menu .sidebar-nav .sidebar-bottom .profile-details span {
+  font-size: 12px;
+}
+
+.dashboard-menu .sidebar-nav .sidebar-bottom .logout {
+  display: block;
+  margin: 18px 0 0 47px;
+}
+
+.dashboard-menu .sidebar-nav .sidebar-bottom.close .logout {
+  margin: 18px 27px 18px 28px;
+}
+
+/* MAIN */
+main {
+  min-height: 100vh;
+  width: calc(100% - 250px);
+}
+
+main.active {
+  width: calc(100% - 78px);
+}
+
+main .dashboard-area {
+  position: absolute;
+  top: 18px;
+  left: 16.75rem;
+}
+
+main.active .dashboard-area {
+  left: 6.12rem;
+}
+
+main .dashboard-area h2 {
+  color: var(--text-color);
+  font-size: 25px;
+  line-height: 37px;
+  font-weight: 500;
+}
+
+.hidden {
+  display: none;
+}
+
+.sidebar-nav,
+.logo,
+.profile,
+.logout,
+main {
+  transition: 0.8s;
+}
